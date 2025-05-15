@@ -1,0 +1,59 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+![{{ title }}]({{ image }})
+
+{{ title }}
+===========
+
+By {{ author }}
+
+{%- if status == 'Available' -%}
+Available
+{%- elif status == 'Issued' -%}
+Issued
+{%- endif -%}
+
+Publisher: **{{ publisher }}**  
+ISBN: **{{ isbn }}**
+
+{{ description }}
+
+{% endblock %}
+
+<!-- {% extends "templates/web.html" %}
+
+{% block page_content %}
+
+{% if doc.image %}
+  <img src="{{ doc.image | abs_url }}" alt="{{ doc.title }}" class="img-fluid mb-4">
+{% endif %}
+
+<h1>{{ doc.title }}</h1>
+
+<p><strong>By:</strong> {{ doc.author }}</p>
+
+{% if doc.status == 'Available' %}
+  <p>Status: <span class="text-success">Available</span></p>
+{% elif doc.status == 'Issued' %}
+  <p>Status: <span class="text-danger">Issued</span></p>
+{% endif %}
+
+<p><strong>Publisher:</strong> {{ doc.publisher }}</p>
+<p><strong>ISBN:</strong> {{ doc.isbn }}</p>
+
+<div>{{ doc.description }}</div>
+
+{% endblock %} -->
+
+
+<!-- <div class="py-8 row">
+    <div class="col-sm-3">
+     <img src= "{{doc.image}}" style="height: 100%;">
+    </div>
+
+<div>
+<a href="{{ doc.route }}">{{doc.name}}</a>
+<p>By: {{ author }}</p></div>
+</div> -->
